@@ -6,6 +6,13 @@ gem 'rails', '4.0.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
+# Use haml for the application's views instead of erb
+gem 'haml', '~> 4.0.5'
+gem 'haml-rails', '~> 0.5.0'
+
+# Use Twitter Bootstrap
+gem 'bootstrap-sass', '~> 3.1.1'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -17,6 +24,12 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+# Include library of ui widgets and things
+gem 'jquery-ui-rails'
+
+# Use autocompletion tool for filling in some form fields.
+gem 'rails4-autocomplete'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -35,6 +48,11 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+# Create fake data when running tests
+group :test do
+  gem 'faker'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -43,6 +61,3 @@ gem 'thin'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
