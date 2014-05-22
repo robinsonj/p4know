@@ -1,0 +1,24 @@
+# Editor Config : http://editorconfig.org
+root = true
+
+[*]
+trim_trailing_whitespace = true
+insert_final_newline = true
+charset = utf-8
+end_of_line = lf
+indent_style = space
+
+[*.rb]
+indent_size = 2
+
+[*.haml]
+indent_size = 2
+
+[*.js*]
+indent_size = 2
+
+[*.yml]
+indent_size = 4
+
+[Gemfile]
+indent_size = 2
