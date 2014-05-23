@@ -19,7 +19,7 @@ class ThingsController < ApplicationController
   private
 
   def thing_params
-    params.require()
+    params.require(:thing_names)
   end
 
   def save_knowledge
