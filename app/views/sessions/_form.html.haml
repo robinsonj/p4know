@@ -1,4 +1,12 @@
-= form_tag session_create_path, class: 'navbar-form pull-right'
-  = text_field_tag      :username, class: 'col-lg-2 col-md-2 col-sm-2 col-xs-2 form-control'
-  = password_field_tag  :password, class: 'col-lg-2 col-md-2 col-sm-2 col-xs-2 form-control'
-  = submit_tag          'Login',   class: 'btn btn-primary'
+= form_tag sessions_create_path,
+  class: 'navbar-form pull-right form-inline' do
+  .form-group
+    %label.sr-only{ for: :username } Username
+    = text_field_tag      :username, '', placeholder: 'Username',
+      class: 'col-lg-2 col-md-2 col-sm-2 col-xs-2 form-control'
+  .form-group
+    %label.sr-only{ for: :password } Password
+    = password_field_tag  :password, '', placeholder: 'Password',
+      class: 'col-lg-2 col-md-2 col-sm-2 col-xs-2 form-control'
+  .form-group
+    = submit_tag          'Login',       class: 'btn btn-primary'
