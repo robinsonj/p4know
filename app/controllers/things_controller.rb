@@ -4,6 +4,7 @@ class ThingsController < ApplicationController
 
   # POST /set_knowledge
   def set_knowledge
+    @user = User.first
 
     save_knowledge
 
@@ -12,6 +13,7 @@ class ThingsController < ApplicationController
 
   # GET /get_knowledge
   def get_knowledge
+    @users_results = [User.first]
 
     redirect_to :back
   end
