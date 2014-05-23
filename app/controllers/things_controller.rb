@@ -7,14 +7,13 @@ class ThingsController < ApplicationController
 
     save_knowledge
 
-    render :refresh
+    redirect_to :back
   end
 
   # GET /get_knowledge
   def get_knowledge
 
-
-    render :refresh
+    redirect_to :back
   end
 
   private
