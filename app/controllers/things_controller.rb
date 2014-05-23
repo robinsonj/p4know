@@ -5,6 +5,7 @@ class ThingsController < ApplicationController
   # POST /set_knowledge
   def set_knowledge
 
+    save_knowledge
 
     render :refresh
   end
@@ -20,5 +21,9 @@ class ThingsController < ApplicationController
 
   def thing_params
     params.require()
+  end
+
+  def save_knowledge
+    @user.things = Thing.from_string(thing_params)
   end
 end
