@@ -5,6 +5,6 @@ P4know::Application.routes.draw do
   get  'get_knowledge', to: 'things#get_knowledge'
 
   resources :things, only: [] do
-    get :autocomplete_name, on: :collection
+    get :autocomplete_thing_name, on: :collection, as: :autocomplete_names
   end
 end
