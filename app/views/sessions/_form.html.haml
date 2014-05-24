@@ -1,12 +1,28 @@
-= form_tag sessions_create_path,
-  class: 'navbar-form pull-right form-inline' do
-  .form-group
-    %label.sr-only{ for: :username } Username
-    = text_field_tag      :username, '', placeholder: 'Username',
-      class: 'col-lg-2 col-md-2 col-sm-2 col-xs-2 form-control'
-  .form-group
-    %label.sr-only{ for: :password } Password
-    = password_field_tag  :password, '', placeholder: 'Password',
-      class: 'col-lg-2 col-md-2 col-sm-2 col-xs-2 form-control'
-  .form-group
-    = submit_tag          'Login',       class: 'btn btn-primary'
+- if user_signed_in?
+  %ul.nav.navbar-nav.navbar-right
+    %li
+      %a
+        Signed in as
+        = current_user.name
+    %li
+      = form_tag sessions_destroy_path,
+        class: 'navbar-form pull-right form-inline' do
+        .form-group
+          .btn-group.btn-group-sm
+            = submit_tag 'Logout', class: 'btn btn-primary'
+- else
+  = form_tag sessions_create_path,
+    class: 'navbar-form pull-right form-inline' do
+    .form-group
+      .input-group.input-group-sm
+        %label.sr-only{ for: :username } Username
+        = text_field_tag      :username, '', placeholder: 'Username',
+          class: 'col-lg-2 col-md-2 col-sm-2 col-xs-2 form-control'
+    .form-group
+      .input-group.input-group-sm
+        %label.sr-only{ for: :password } Password
+        = password_field_tag  :password, '', placeholder: 'Password',
+          class: 'col-lg-2 col-md-2 col-sm-2 col-xs-2 form-control'
+    .form-group
+      .btn-group.btn-group-sm
+        = submit_tag 'Login', class: 'btn btn-primary'
