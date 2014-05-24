@@ -1,0 +1,12 @@
+- if flash[:info]
+  %div.alert.alert-info.alert-dismissable
+    %button{ 'type' => 'button', 'class' => 'close', 'data-dismiss' => 'alert', 'aria-hidden' => 'true' }  &times;
+    = flash[:info]
+- elsif flash[:error]
+  %div.alert.alert-danger.alert-dismissable
+    %button{ 'type' => 'button', 'class' => 'close', 'data-dismiss' => 'alert', 'aria-hidden' => 'true' }  &times;
+    = flash[:error]
+- elsif flash[:notice]
+  %div.alert.alert-warning.alert-dismissable
+    %button{ 'type' => 'button', 'class' => 'close', 'data-dismiss' => 'alert', 'aria-hidden' => 'true' }  &times;
+    = flash[:notice]

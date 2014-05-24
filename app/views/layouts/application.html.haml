@@ -10,4 +10,7 @@
     .container-fluid{ style: 'padding-top: 50px;' }
       .row{ style: 'padding-top: 50px;' }
         .col-lg-8.col-md-8.col-sm-8.col-xs-8.col-lg-offset-2.col-md-offset-2.col-sm-offset-2.col-xs-offset-2
+          = render :partial => 'layouts/flash_messages'
+      .row
+        .col-lg-8.col-md-8.col-sm-8.col-xs-8.col-lg-offset-2.col-md-offset-2.col-sm-offset-2.col-xs-offset-2
           = yield
