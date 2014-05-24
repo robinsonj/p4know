@@ -1,6 +1,10 @@
 module ApplicationHelper
 
   def current_user
-    User.find(session[:user_id])
+    session[:user]
+  end
+
+  def user_signed_in?
+    true if session[:user] != nil
   end
 end
