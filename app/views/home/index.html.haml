@@ -8,7 +8,23 @@
 .row
   .col-lg-6.col-md-6.col-sm.6-col-xs-6
     = form_tag set_knowledge_path, role: 'form' do
-      = render :partial => 'home/form'
+      = render :partial => 'home/form', locals: { disabled: !user_signed_in? }
   .col-lg-6.col-md-6.col-sm.6-col-xs-6
     = form_tag get_knowledge_path, role: 'form' do
-      = render :partial => 'home/form'
+      = render :partial => 'home/form', locals: { disabled: false }
+.row
+  .col-lg-6.col-md-6.col-sm.6-col-xs-6
+    - if user_signed_in?
+      - user_things.each do |thing|
+        %h4
+          %span.label.label-success
+            = thing.name
+  .col-lg-6.col-md-6.col-sm.6-col-xs-6
+    - if results
+      - results.each do |thing|
+        .page-header
+          %h4= thing.name
+        - thing.users.each do |user|
+          %h4
+            %span.label.label-success
+              = user.name
