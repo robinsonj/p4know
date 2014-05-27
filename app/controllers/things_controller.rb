@@ -4,8 +4,6 @@ class ThingsController < ApplicationController
 
   # POST /set_knowledge
   def set_knowledge
-    @user = User.first
-
     save_knowledge
 
     redirect_to :back
@@ -13,7 +11,7 @@ class ThingsController < ApplicationController
 
   # GET /get_knowledge
   def get_knowledge
-    @users_results = [User.first]
+    session[:thing_names] = thing_params
 
     redirect_to :back
   end
@@ -25,6 +23,6 @@ class ThingsController < ApplicationController
   end
 
   def save_knowledge
-    @user.things = Thing.from_string(thing_params)
+    current_user.things << Thing.from_string(thing_params)
   end
 end
