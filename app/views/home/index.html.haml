@@ -8,7 +8,7 @@
 .row
   .col-lg-6.col-md-6.col-sm.6-col-xs-6
     = form_tag set_knowledge_path, role: 'form' do
-      = render :partial => 'home/form'
+      = render :partial => 'home/form', locals: { disabled: !user_signed_in? }
   .col-lg-6.col-md-6.col-sm.6-col-xs-6
     = form_tag get_knowledge_path, role: 'form' do
-      = render :partial => 'home/form'
+      = render :partial => 'home/form', locals: { disabled: false }
