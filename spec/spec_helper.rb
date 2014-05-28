@@ -39,4 +39,7 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  # Use factory_girl & factory_girl_rails to generate test data.
+  config.include FactoryGirl::Syntax::Methods
 end

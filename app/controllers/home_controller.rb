@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
 
+  # GET /
   def index
     render locals: {
       user_things:  set_user_things,

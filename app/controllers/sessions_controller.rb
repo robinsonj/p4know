@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+
+  # POST /sessions/create
   def create
     @user = User.find_or_create_by(name: user_name_param)
 
@@ -13,6 +15,7 @@ class SessionsController < ApplicationController
     end
   end
 
+  # POST /sessions/destroy
   def destroy
     session[:user] = nil
     redirect_to :back, notice: 'Logged out.'

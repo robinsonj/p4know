@@ -1,5 +1,7 @@
 class ThingsController < ApplicationController
 
+  # before_action :authenticate_user!, only: [:set_knowledge]
+
   autocomplete :thing, :name, full: false
 
   # POST /set_knowledge
