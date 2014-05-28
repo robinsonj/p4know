@@ -61,3 +61,4 @@ gem 'thin'
 
 # Use Capistrano for deployment
 gem 'capistrano', '~> 3.2.0'
+gem 'capistrano-rvm'
