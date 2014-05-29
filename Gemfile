@@ -53,9 +53,6 @@ group :test do
   gem 'faker'
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
 # Use thin as the app server
 gem 'thin'
 
