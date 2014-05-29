@@ -4,11 +4,14 @@ lock '3.2.1'
 set :application, 'P4Know'
 set :repo_url, 'git@github.com:robinsonj/p4know.git'
 
-# Default branch is :master
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+# Deploy by tag names using the most recent as the default.
+set :branch do
+  default_tag = `git tag`.split("\n").last
 
-# Default deploy_to directory is /var/www/my_app
-# set :deploy_to, '/var/www/my_app'
+  tag = Capistrano::CLI.ui.ask "Tag to deploy (default: #{default_tag}) "
+  tag = default_tag if tag.empty?
+  tag
+end
 
 # Default value for :scm is :git
 # set :scm, :git
