@@ -17,13 +17,13 @@ end
 set :deploy_to, '/var/www/p4know'
 
 # Default value for :scm is :git
-# set :scm, :git
+set :scm, :git
 
 # Default value for :format is :pretty
-# set :format, :pretty
+set :format, :pretty
 
 # Default value for :log_level is :debug
-# set :log_level, :debug
+set :log_level, :debug
 
 # Default value for :pty is false
 # set :pty, true
@@ -38,7 +38,7 @@ set :deploy_to, '/var/www/p4know'
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 5
 
 set :rvm_type, :user
 set :rvm_ruby_version, '2.0.0@P4Know'
