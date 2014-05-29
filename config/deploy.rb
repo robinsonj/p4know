@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:robinsonj/p4know.git'
 set :branch do
   default_tag = `git tag`.split("\n").last
 
-  tag = Capistrano::CLI.ui.ask "Tag to deploy (default: #{default_tag}) "
+  tag = Capistrano::CLI.ui.ask "Tag to deploy (default: #{default_tag}): "
   tag = default_tag if tag.empty?
   tag
 end
