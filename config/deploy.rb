@@ -13,6 +13,9 @@ set :branch do
   tag
 end
 
+# Default deploy_to directory is /var/www/p4know
+set :deploy_to, '/var/www/p4know'
+
 # Default value for :scm is :git
 # set :scm, :git
 
