@@ -37,6 +37,8 @@ set :keep_releases, 10
 set :rvm_type, :system
 set :rvm_ruby_version, '2.0.0@p4know'
 
+set :bundle_gemfile, -> { release_path.join('Gemfile') }
+
 namespace :deploy do
 
   desc 'Restart application'
