@@ -6,15 +6,6 @@ set :use_sudo, false
 set :application, 'P4Know'
 set :repo_url, 'git@github.com:robinsonj/p4know.git'
 
-# Deploy by tag names using the most recent as the default.
-set :branch do
-  default_tag = `git tag`.split("\n").last
-
-  tag = Capistrano::CLI.ui.ask "Tag to deploy (default: #{default_tag}): "
-  tag = default_tag if tag.empty?
-  tag
-end
-
 # Default deploy_to directory is /var/www/p4know
 set :deploy_to, '/var/www/p4know'
 
