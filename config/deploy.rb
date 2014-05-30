@@ -5,6 +5,7 @@ set :use_sudo, false
 
 set :application, 'P4Know'
 set :repo_url, 'git@github.com:robinsonj/p4know.git'
+set :deploy_via, :remote_cache
 
 # Default deploy_to directory is /var/www/p4know
 set :deploy_to, '/var/www/p4know'
@@ -31,10 +32,10 @@ set :log_level, :debug
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-set :keep_releases, 5
+set :keep_releases, 10
 
-set :rvm_type, :user
-set :rvm_ruby_version, '2.0.0@P4Know'
+set :rvm_type, :system
+set :rvm_ruby_version, '2.0.0@p4know'
 
 namespace :deploy do
 
