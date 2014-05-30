@@ -56,6 +56,11 @@ end
 # Use thin as the app server
 gem 'thin'
 
+# Include a javascript runtime for thin to use in production.
+group :production, :staging do
+  gem 'therubyracer'
+end
+
 # Use Capistrano for deployment
 group :development do
   gem 'capistrano', '~> 3.2.0'
