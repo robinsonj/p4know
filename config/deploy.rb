@@ -1,6 +1,8 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
+set :use_sudo, false
+
 set :application, 'P4Know'
 set :repo_url, 'git@github.com:robinsonj/p4know.git'
 
