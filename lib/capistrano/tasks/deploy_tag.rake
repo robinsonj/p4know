@@ -2,10 +2,19 @@ desc 'Prompt for deployment tag'
 task :set_deploy_tag do
   default_tag = `git tag`.split("\n").last
 
-  ask :tag, "Tag to deploy (default: #{default_tag}): "
-  tag = default_tag if fetch(:tag).empty?
+  ask :tag, default_tag
 
-  set :branch, tag.to_s
+  tag = fetch(:tag)
+
+  tag = default_tag if tag.empty?
+
+  set :branch, tag
+
+  if fetch(:branch)
+    puts "Creating archive from tag #{fetch(:branch)}."
+  else
+    puts "Can not create archive from tag #{fetch(:branch)}."
+  end
 end
 
 before 'deploy:starting', :set_deploy_tag
