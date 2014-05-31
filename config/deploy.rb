@@ -44,11 +44,13 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
+      within current_path do
+        execute :bundle, "exec thin -C <<thin config>> restart"
+      end
     end
   end
 
+  before :restart, 'rvm:hook'
   after :publishing, :restart
 
   after :restart, :clear_cache do
